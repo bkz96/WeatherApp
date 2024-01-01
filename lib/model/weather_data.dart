@@ -1,18 +1,19 @@
 class WeatherData {
   WeatherData({
-      this.coord, 
-      this.weather, 
-      this.base, 
-      this.main, 
-      this.visibility, 
-      this.wind, 
-      this.clouds, 
-      this.dt, 
-      this.sys, 
-      this.timezone, 
-      this.id, 
-      this.name, 
-      this.cod,});
+    this.coord,
+    this.weather,
+    this.base,
+    this.main,
+    this.visibility,
+    this.wind,
+    this.clouds,
+    this.dt,
+    this.sys,
+    this.timezone,
+    this.id,
+    this.name,
+    this.cod,
+  });
 
   WeatherData.fromJson(dynamic json) {
     coord = json['coord'] != null ? Coord.fromJson(json['coord']) : null;
@@ -34,6 +35,7 @@ class WeatherData {
     name = json['name'];
     cod = json['cod'];
   }
+
   Coord? coord;
   List<Weather>? weather;
   String? base;
@@ -77,16 +79,16 @@ class WeatherData {
     map['cod'] = cod;
     return map;
   }
-
 }
 
 class Sys {
   Sys({
-      this.type, 
-      this.id, 
-      this.country, 
-      this.sunrise, 
-      this.sunset,});
+    this.type,
+    this.id,
+    this.country,
+    this.sunrise,
+    this.sunset,
+  });
 
   Sys.fromJson(dynamic json) {
     type = json['type'];
@@ -95,6 +97,7 @@ class Sys {
     sunrise = json['sunrise'];
     sunset = json['sunset'];
   }
+
   int? type;
   int? id;
   String? country;
@@ -110,16 +113,17 @@ class Sys {
     map['sunset'] = sunset;
     return map;
   }
-
 }
 
 class Clouds {
   Clouds({
-      this.all,});
+    this.all,
+  });
 
   Clouds.fromJson(dynamic json) {
     all = json['all'];
   }
+
   int? all;
 
   Map<String, dynamic> toJson() {
@@ -127,18 +131,19 @@ class Clouds {
     map['all'] = all;
     return map;
   }
-
 }
 
 class Wind {
   Wind({
-      this.speed, 
-      this.deg,});
+    this.speed,
+    this.deg,
+  });
 
   Wind.fromJson(dynamic json) {
     speed = json['speed'];
     deg = json['deg'];
   }
+
   int? speed;
   int? deg;
 
@@ -148,17 +153,17 @@ class Wind {
     map['deg'] = deg;
     return map;
   }
-
 }
 
 class Main {
   Main({
-      this.temp, 
-      this.feelsLike, 
-      this.tempMin, 
-      this.tempMax, 
-      this.pressure, 
-      this.humidity,});
+    this.temp,
+    this.feelsLike,
+    this.tempMin,
+    this.tempMax,
+    this.pressure,
+    this.humidity,
+  });
 
   Main.fromJson(dynamic json) {
     temp = json['temp'];
@@ -168,6 +173,7 @@ class Main {
     pressure = json['pressure'];
     humidity = json['humidity'];
   }
+
   double? temp;
   double? feelsLike;
   double? tempMin;
@@ -185,15 +191,15 @@ class Main {
     map['humidity'] = humidity;
     return map;
   }
-
 }
 
 class Weather {
   Weather({
-      this.id, 
-      this.main, 
-      this.description, 
-      this.icon,});
+    this.id,
+    this.main,
+    this.description,
+    this.icon,
+  });
 
   Weather.fromJson(dynamic json) {
     id = json['id'];
@@ -201,6 +207,7 @@ class Weather {
     description = json['description'];
     icon = json['icon'];
   }
+
   int? id;
   String? main;
   String? description;
@@ -214,18 +221,19 @@ class Weather {
     map['icon'] = icon;
     return map;
   }
-
 }
 
 class Coord {
   Coord({
-      this.lon, 
-      this.lat,});
+    this.lon,
+    this.lat,
+  });
 
   Coord.fromJson(dynamic json) {
     lon = json['lon'];
     lat = json['lat'];
   }
+
   double? lon;
   double? lat;
 
@@ -235,5 +243,4 @@ class Coord {
     map['lat'] = lat;
     return map;
   }
-
 }

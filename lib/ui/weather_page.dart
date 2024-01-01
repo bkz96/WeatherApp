@@ -30,7 +30,7 @@ class WeatherPage extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 weatherBloc.onTapWeather(weatherBloc, context, _controller);
-               //_onTapWeather(weatherBloc, context);
+                //_onTapWeather(weatherBloc, context);
               },
               child: const Text('Get Weather'),
             ),
@@ -63,6 +63,4 @@ class WeatherPage extends StatelessWidget {
       ),
     );
   }
-
-
 }

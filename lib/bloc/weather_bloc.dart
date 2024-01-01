@@ -43,9 +43,11 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
       yield WeatherLoading();
       try {
         final response = await http.get(
-          Uri.parse('https://api.openweathermap.org/data/2.5/weather?q=${event.city}&appid=1b28f349fb87541b2b89e6095157d0f9'),
+          Uri.parse(
+              'https://api.openweathermap.org/data/2.5/weather?q=${event.city}&appid=1b28f349fb87541b2b89e6095157d0f9'),
         );
-        WeatherData weatherData = WeatherData.fromJson(json.decode(response.body));
+        WeatherData weatherData =
+            WeatherData.fromJson(json.decode(response.body));
         yield WeatherLoaded(weatherData);
       } catch (e) {
         yield WeatherError('Failed to fetch weather data.');
@@ -53,14 +55,16 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
     }
   }
 
-  onTapWeather(WeatherBloc weatherBloc, BuildContext context, TextEditingController controller){
-    if(controller.text != "") {
+  onTapWeather(WeatherBloc weatherBloc, BuildContext context,
+      TextEditingController controller) {
+    if (controller.text != "") {
       weatherBloc.add(FetchWeather(controller.text));
-    }else{
+    } else {
       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-        content: Text('Please enter City', style: TextStyle(
-            color: Colors.red
-        ),),
+        content: Text(
+          'Please enter City',
+          style: TextStyle(color: Colors.red),
+        ),
       ));
     }
   }
