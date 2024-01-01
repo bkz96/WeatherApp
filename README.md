@@ -18,7 +18,7 @@ samples, guidance on mobile development, and a full API reference.
 
 1. Clone the Repository:
    - Open a terminal and run the following command to clone the repository:
-   - git clone https://github.com/bkz96/weather_app.git
+   - git clone https://github.com/bkz96/WeatherApp.git
 2. Navigate to the Project Directory:
    - Change into the project directory:
    - cd weather_app
