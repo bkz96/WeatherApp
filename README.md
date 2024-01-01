@@ -34,4 +34,3 @@ samples, guidance on mobile development, and a full API reference.
 6. Test the App:
   - Once the app is installed and running, you should see the Weather App interface. Enter a city name, and the app will simulate fetching weather data and display it.
 
-git config --global user.email bhoomikachauhan11@gmail.com
